@@ -8,6 +8,7 @@
 body {
   margin: 0;
   background-color: var(--color-40);
+  font-family: sans-serif;
 }
 
 .game {
@@ -35,4 +36,12 @@ body {
 
 .board > .grid {
   border: solid var(--color-30) 1px;
+}
+
+.grid {
+  color: var(--color-10);
+  font-size: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
