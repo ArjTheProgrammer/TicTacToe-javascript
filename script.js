@@ -7,9 +7,11 @@ function Gameboard(){
 
     grids.forEach(grid => {
         grid.addEventListener(("click"), () =>{
-            grid.textContent = currentPlayer == playerX ? playerX.marker : playerO.marker;
-            currentPlayer = currentPlayer == playerO ? playerX : playerO;
-        })
+            if (grid.innerHTML === ""){
+                grid.textContent = currentPlayer == playerX ? playerX.marker : playerO.marker;
+                currentPlayer = currentPlayer == playerO ? playerX : playerO;
+            }
+        });   
     });
 }
 
