@@ -1,0 +1,38 @@
+:root {
+  --color-40: #26355d;
+  --color-30: #af47d2;
+  --color-20: #ff8f00;
+  --color-10: #ffdb00;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-40);
+}
+
+.game {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-x,
+.player-o {
+  height: 300px;
+  width: 200px;
+  border: solid var(--color-20) 2px;
+}
+
+.board {
+  height: 500px;
+  width: 500px;
+  border: solid var(--color-30) 3px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.board > .grid {
+  border: solid var(--color-30) 1px;
+}
