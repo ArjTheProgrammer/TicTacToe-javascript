@@ -1,7 +1,3 @@
-Sure, here's a more visually appealing version with some emojis to make it pop! 🎨✨
-
----
-
 # 🎮 Tic Tac Toe Project
 
 ## 📚 Introduction
