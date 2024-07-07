@@ -45,3 +45,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.player-x,
+.player-o {
+  color: var(--color-10);
+  font-size: 3rem;
+  text-align: center;
+}
