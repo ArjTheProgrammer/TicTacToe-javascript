@@ -22,9 +22,12 @@ body {
 
 .player-x,
 .player-o {
-  height: 300px;
-  width: 200px;
-  border: solid var(--color-20) 2px;
+  height: 100px;
+  width: 300px;
+  border: solid var(--color-20) 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
@@ -36,7 +39,7 @@ body {
 }
 
 .board > .grid {
-  border: solid var(--color-30) 1px;
+  border: solid var(--color-30) 3px;
 }
 
 .grid {
@@ -73,6 +76,8 @@ dialog {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 dialog > form > input {
@@ -105,4 +110,16 @@ dialog > form > button:hover {
 ::backdrop {
   background-color: black;
   opacity: 0.6;
+}
+
+.postgame {
+  font-weight: 800;
+}
+
+.postgame > form > div:first-child {
+  margin-top: 50px;
+}
+
+.postgame > form > button {
+  margin-top: 40px;
 }
