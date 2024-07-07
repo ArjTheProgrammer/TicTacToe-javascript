@@ -31,7 +31,7 @@ function Gameboard(){
                 (placedMarked[3] == `${currentPlayer.marker}` && placedMarked[4] == `${currentPlayer.marker}` && placedMarked[5] == `${currentPlayer.marker}`) ||
                 (placedMarked[6] == `${currentPlayer.marker}` && placedMarked[7] == `${currentPlayer.marker}` && placedMarked[8] == `${currentPlayer.marker}`)
             ){
-                return currentPlayer.marker == `X` ? playerXField.textContent = `X is the winner` : playerOField.textContent = "O is the Winner";
+                return console.log(`Winner is ${currentPlayer.name}`);
             }
 
             //horizontal
@@ -39,14 +39,18 @@ function Gameboard(){
                 (placedMarked[1] == `${currentPlayer.marker}` && placedMarked[4] == `${currentPlayer.marker}` && placedMarked[7] == `${currentPlayer.marker}`) ||
                 (placedMarked[2] == `${currentPlayer.marker}` && placedMarked[5] == `${currentPlayer.marker}` && placedMarked[8] == `${currentPlayer.marker}`)
             ){
-                return currentPlayer.marker == `X` ? playerXField.textContent = `X is the winner` : playerOField.textContent = "O is the Winner";
+                return console.log(`Winner is ${currentPlayer.name}`);
             }
 
             //diagonal
             if ((placedMarked[0] == `${currentPlayer.marker}` && placedMarked[4] == `${currentPlayer.marker}` && placedMarked[8] == `${currentPlayer.marker}`)||
                 (placedMarked[2] == `${currentPlayer.marker}` && placedMarked[4] == `${currentPlayer.marker}` && placedMarked[6] == `${currentPlayer.marker}`)
             ){
-                return currentPlayer.marker == `X` ? playerXField.textContent = `X is the winner` : playerOField.textContent = "O is the Winner";
+                return console.log(`Winner is ${currentPlayer.name}`);
+            }
+
+            else if (turns == 9){
+                return console.log("tie!");
             }
         }
         return {name, marker, placedMarked,checkWinner};
@@ -55,10 +59,12 @@ function Gameboard(){
     const playerX = player("playerX", "X");
     const playerO = player("playerO", "O");
     let currentPlayer = playerX;
+    let turns = 0;
 
     grids.forEach((grid, index) => {
         grid.addEventListener(("click"), () =>{
             if (grid.textContent === ""){
+                turns++;
                 currentPlayer.placedMarked.splice(index, 1, currentPlayer.marker);
                 grid.textContent = currentPlayer.marker;
                 currentPlayer.checkWinner();
