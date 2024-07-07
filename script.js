@@ -3,10 +3,24 @@ function Gameboard(){
     const grids = document.querySelectorAll(".grid");
     const playerXField = document.querySelector(".player-x");
     const playerOField = document.querySelector(".player-o");
+    const playerXname = document.querySelector("#player-x-name");
+    const playerOname = document.querySelector("#player-o-name");
+    const playButton = document.querySelector(".play");
 
-    function inputName(){
         showInputName.showModal();
-    }
+
+    playButton.addEventListener("click", () => {
+        const xDiv = document.createElement("div");
+        const oDiv = document.createElement("div");
+
+        xDiv.textContent = playerXname.value;
+        oDiv.textContent = playerOname.value;
+        console.log(`${playerXname.value} ${playerOname.value}`)
+
+        playerXField.appendChild(xDiv);
+        playerOField.appendChild(oDiv);
+        showInputName.close();
+    })
 
     function player(name, marker){
         let placedMarked = ['','','','','','','','',''];
@@ -52,8 +66,6 @@ function Gameboard(){
             }
         });   
     });
-
-    inputName();
 }
 
 Gameboard();

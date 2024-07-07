@@ -63,8 +63,6 @@ dialog {
   border: 0;
   height: 300px;
   width: 300px;
-  display: flex;
-  flex-direction: column;
   border-radius: 20px;
   padding: 10px 30px;
   color: white;
@@ -72,7 +70,12 @@ dialog {
   background-color: var(--color-30);
 }
 
-dialog > input {
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog > form > input {
   margin: 5px 0 30px 0;
   padding: 5px 10px;
   font-size: 1.2rem;
@@ -81,11 +84,11 @@ dialog > input {
   color: black;
 }
 
-dialog > input:focus {
+dialog > form > input:focus {
   background-color: var(--color-20);
 }
 
-dialog > button {
+dialog > form > button {
   align-self: center;
   padding: 10px 30px;
   border-radius: 20px;
@@ -95,7 +98,7 @@ dialog > button {
   font-weight: 700;
 }
 
-dialog > button:hover {
+dialog > form > button:hover {
   background-color: var(--color-10-highlight);
 }
 
